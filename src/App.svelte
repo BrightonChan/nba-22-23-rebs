@@ -5,6 +5,7 @@
   import Scatterplot from './components/Scatterplot.svelte';
   import Footer from './components/Footer.svelte';
   import { players } from '../static/data/players2023.js';
+  import { onMount } from 'svelte';
 
   let nbaStats = [];
   let val = "";
