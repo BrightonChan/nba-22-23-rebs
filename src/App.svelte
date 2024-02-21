@@ -4,7 +4,7 @@
   import Select from 'svelte-select';
   import Scatterplot from './components/Scatterplot.svelte';
   import Footer from './components/Footer.svelte';
-  import { players } from '../public/data/players2023.js';
+  import { players } from '../public/static/data/players2023.js';
 
   let nbaStats;
   let val = "";
