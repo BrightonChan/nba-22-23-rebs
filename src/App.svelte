@@ -6,14 +6,26 @@
   import Footer from './components/Footer.svelte';
   import { players } from '../static/data/players2023.js';
 
-  let nbaStats;
+  let nbaStats = [];
   let val = "";
   let selectedPosition = "allPositions";
   let filteredData;
 
   $: value = null;
 
-  d3.csv('../static/data/nba2023.csv').then(data => (nbaStats = data));
+  onMount(async () => {
+
+    const res = await fetch('nba2023.csv'); 
+
+    const csv = await res.text();
+
+    nbaStats = d3.csvParse(csv, d3.autoType)
+
+    console.log(nbaStats);
+
+  });
+
+  /*d3.csv('../static/data/nba2023.csv').then(data => (nbaStats = data));*/
 
   const handleSelect = event => {
     value = event.detail.value;
