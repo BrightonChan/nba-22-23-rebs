@@ -21,7 +21,6 @@
       }
     });
 
-
   $: selectedPoint = data.find(({ player }) => player === selectedPlayer);
 
   const textAccessor = d => d.player;
@@ -155,6 +154,8 @@
         y={0}
         fill="#ffffff"
         fill-opacity={0}
+        role="button"
+        tabindex="0"
         on:mousemove={handleMouseMove}
         on:mouseleave={handleMouseLeave}
       />
