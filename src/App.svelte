@@ -5,7 +5,6 @@
   import Scatterplot from './components/Scatterplot.svelte';
   import Footer from './components/Footer.svelte';
   import { players } from '../static/data/players2023.js';
-  import nba from '../static/data/nba2023.csv';
 
   let nbaStats;
   let val = "";
@@ -14,7 +13,7 @@
 
   $: value = null;
 
-  d3.csv(nba).then(data => (nbaStats = data));
+  d3.csv('../static/data/nba2023.csv').then(data => (nbaStats = data));
 
   const handleSelect = event => {
     value = event.detail.value;
