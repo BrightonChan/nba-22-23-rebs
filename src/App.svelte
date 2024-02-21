@@ -13,7 +13,7 @@
 
   $: value = null;
 
-  d3.csv('../data/nba2023.csv').then(data => (nbaStats = data));
+  d3.csv('../static/data/nba2023.csv').then(data => (nbaStats = data));
 
   const handleSelect = event => {
     value = event.detail.value;
